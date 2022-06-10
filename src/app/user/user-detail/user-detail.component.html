@@ -1,0 +1,43 @@
+<h3>User Detail</h3>
+
+<table class="table table-sm table-striped table-dark" *ngIf="user">
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td>{{ user.id }}</td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td>{{ user.username }}</td>
+        </tr>
+        <tr>
+            <td>Firstname</td>
+            <td>{{ user.firstname }}</td>
+        <tr>
+            <td>Lastname</td>
+            <td>{{ user.lastname }}</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>{{ user.phone }}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+            <td>Reviewer</td>
+            <td>{{ user.isReviewer }}</td>
+        </tr>
+        <tr>
+            <td>Admin</td>
+            <td>{{ user.isAdmin }}</td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <button (click)="remove()" class="btn btn-danger">Delete</button>
+    <span *ngIf="showVerify">
+        | <button (click)="verify()" class="btn btn-dark">Verify Delete</button>
+    </span>
+</div>

@@ -1,0 +1,33 @@
+<app-menu></app-menu>
+<h3>Request Review List</h3>
+<h4>Request</h4>
+<table class="table table-striped table-sm table-dark" *ngIf="requests">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Desc</th>
+            <th>Justification</th>
+            <th>Rejection Reason</th>
+            <th>Delivery Mode</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>User</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let req of requests">
+            <td>{{ req.id }}</td>
+            <td>{{ req.description }}</td>
+            <td>{{ req.justification }}</td>
+            <td>{{ req.rejectionReason }}</td>
+            <td>{{ req.deliveryMode }}</td>
+            <td>{{ req.status }}</td>
+            <td>{{ req.total | currency}}</td>
+            <td>{{ req.user.username}}</td>
+            <td>
+                <a routerLink="/request/review/{{req.id}}">Review</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

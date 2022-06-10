@@ -1,0 +1,47 @@
+<h3>Vendor Detail</h3>
+
+<table class="table table-sm table-striped table-dark" *ngIf="vendor">
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td>{{ vendor.id }}</td>
+        </tr>
+        <tr>
+            <td>Code</td>
+            <td>{{ vendor.code }}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{ vendor.name }}</td>
+        <tr>
+            <td>Address</td>
+            <td>{{ vendor.address }}</td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>{{ vendor.city }}</td>
+        </tr>
+        <tr>
+            <td>State</td>
+            <td>{{ vendor.state }}</td>
+        </tr>
+        <tr>
+            <td>Zip</td>
+            <td>{{ vendor.zip }}</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>{{ vendor.phone }}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{ vendor.email }}</td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <button (click)="remove()" class="btn btn-danger">Delete</button>
+    <span *ngIf="showVerify">
+        | <button (click)="verify()" class="btn btn-dark">Verify Delete</button>
+    </span>
+</div>

@@ -1,0 +1,40 @@
+<h3>Product Edit</h3>
+
+<table class="table table-striped table-sm table-info" *ngIf="back">
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="product.id" disabled></td>
+        </tr>
+        <tr>
+            <td>PartNbr</td>
+            <td><input [(ngModel)]="product.partNbr"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input [(ngModel)]="product.name"></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input [(ngModel)]="product.price"></td>
+        </tr>
+        <tr>
+            <td>Unit</td>
+            <td><input [(ngModel)]="product.unit"></td>
+        </tr>
+        <tr>
+            <td>PhotoPath</td>
+            <td><input [(ngModel)]="product.photoPath"></td>
+        </tr>
+        <td>Vendor</td>
+        <td>
+            <select [(ngModel)]="product.vendorId" name="vendorId">
+                <option *ngFor="let vend of vendors" value="{{vend.id}}">{{ vend.name }}</option>
+            </select>
+        </td>
+    </tbody>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+</div>
+

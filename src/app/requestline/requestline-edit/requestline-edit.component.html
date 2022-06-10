@@ -1,0 +1,24 @@
+<h3>Requestline Edit</h3>
+
+<table class="table table-striped table-sm table-info" *ngIf="requestline">
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="requestline.id" disabled></td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td><input [(ngModel)]="requestline.quantity"></td>
+        </tr>
+        <tr>
+            <td>Item</td>
+            <td><select [(ngModel)]="requestline.productId" name="productId">
+                <option *ngFor="let prod of products" value="{{ prod.id }}">{{ prod.name }}</option>
+            </select>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+</div>

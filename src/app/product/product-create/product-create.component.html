@@ -1,0 +1,43 @@
+<app-menu></app-menu>
+<h3>Product Create</h3>
+<form>
+    <table class="table table-sm table-dark table-striped">
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td><input [(ngModel)]="product.id" disabled name="id"></td>
+            </tr>
+            <tr>
+                <td>PartNbr</td>
+                <td><input [(ngModel)]="product.partNbr" name="partNbr"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input [(ngModel)]="product.name" name="name"></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><input [(ngModel)]="product.price" name="price"></td>
+            </tr>
+            <tr>
+                <td>Unit</td>
+                <td><input [(ngModel)]="product.unit" name="unit"></td>
+            </tr>
+            <tr>
+                <td>PhotoPath</td>
+                <td><input [(ngModel)]="product.photoPath" name="photoPath"></td>
+            </tr>
+            <tr>
+                <td>Vendor</td>
+                <td>
+                    <select [(ngModel)]="product.vendorId" name="vendorId">
+                        <option *ngFor="let vend of vendors" value="{{vend.id}}">{{ vend.name }}</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button (click)="save()" class="btn btn-primary">Save</button>
+    </div>
+</form>
