@@ -29,6 +29,7 @@ import { RequestlineCreateComponent } from './requestline/requestline-create/req
 import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
 import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
 import { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
+import { PoComponent } from './vendor/po/po.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { RequestReviewItemComponent } from './request/request-review-item/reques
     RequestlineCreateComponent,
     RequestlineEditComponent,
     RequestReviewListComponent,
-    RequestReviewItemComponent
+    RequestReviewItemComponent,
+    PoComponent
   ],
   imports: [
     BrowserModule,

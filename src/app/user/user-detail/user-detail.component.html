@@ -1,6 +1,6 @@
 <h3>User Detail</h3>
 
-<table class="table table-sm table-striped table-dark" *ngIf="user">
+<table class="table table-sm table-striped table-dark table-bordered table-hover" *ngIf="user">
     <tbody>
         <tr>
             <td>Id</td>
@@ -36,7 +36,7 @@
     </tbody>
 </table>
 <div>
-    <button (click)="remove()" class="btn btn-danger">Delete</button>
+    <button *ngIf="isAdmin" (click)="remove()" class="btn btn-danger">Delete</button>
     <span *ngIf="showVerify">
         | <button (click)="verify()" class="btn btn-dark">Verify Delete</button>
     </span>

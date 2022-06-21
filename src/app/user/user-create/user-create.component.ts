@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SystemServiceService } from 'src/app/system-service.service';
 import { User } from '../user.class';
 import { UserService } from '../user.service';
 
@@ -14,7 +15,8 @@ export class UserCreateComponent implements OnInit {
 
   constructor(
     private usersvc: UserService,
-    private router: Router
+    private router: Router,
+    private syssvc: SystemServiceService
   ) { }
 
   save(): void {
@@ -30,7 +32,11 @@ export class UserCreateComponent implements OnInit {
     })
   }
 
+   get isAdmin(){return this.syssvc._user}
+
+
   ngOnInit(): void {
+    
   }
 
 }

@@ -1,5 +1,6 @@
 nav {
     background-color: #454545;
+    margin:0%;
 }
 
 ul {
@@ -9,6 +10,7 @@ ul {
 
 li {
     display: inline-block;
+    padding: 10px;
 }
 
 a {

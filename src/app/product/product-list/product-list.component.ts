@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SystemServiceService } from 'src/app/system-service.service';
 import { Vendor } from 'src/app/vendor/vendor.class';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
@@ -17,8 +18,13 @@ export class ProductListComponent implements OnInit {
   sortAsc: boolean = true;
 
   constructor(
-    private prodsvc: ProductService
+    private prodsvc: ProductService,
+    private syssvc: SystemServiceService
   ) { }
+
+  get isAdmin() {
+    return this.syssvc._user?.isAdmin
+  }
 
 
   ngOnInit(): void {

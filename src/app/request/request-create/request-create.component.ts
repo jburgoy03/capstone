@@ -15,6 +15,7 @@ export class RequestCreateComponent implements OnInit {
 
   request: Request = new Request;
   users!: User[];
+  user!: User;
 
   constructor(
     private syssvc: SystemServiceService,
@@ -37,7 +38,7 @@ export class RequestCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.request.userId = this.syssvc._user!.id
+    this.request.userId = this.syssvc._user!.id;
   }
 
 }

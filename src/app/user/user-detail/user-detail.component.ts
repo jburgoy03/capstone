@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SystemServiceService } from 'src/app/system-service.service';
 import { User } from '../user.class';
 import { UserService } from '../user.service';
 
@@ -16,11 +17,16 @@ export class UserDetailComponent implements OnInit {
   constructor(
     private usersvc: UserService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private syssvc: SystemServiceService
   ) { }
 
   remove(): void {
     this.showVerify = !this.showVerify;
+  }
+
+  get isAdmin() {
+    return this.syssvc._user?.isAdmin
   }
 
   verify(): void{

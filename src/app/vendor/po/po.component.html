@@ -1,0 +1,37 @@
+<app-menu></app-menu>
+<h3>PO</h3>
+<table class="table table-striped table-sm table-dark table-bordered table-hover" *ngIf="po">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Address</td>
+            <td>City</td>
+            <td>State</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ po.vendor.name }}</td>
+            <td>{{ po.vendor.address }}</td>
+            <td>{{ po.vendor.city }}</td>
+            <td>{{ po.vendor.state }}</td>
+        </tr>
+    </tbody>
+</table>
+<h3>PoLines</h3>
+<table class="table table-striped table-sm table-dark table-bordered table-hover">
+    <thead>
+        <tr>
+            <td>Product</td>
+            <td>Quantity</td>
+            <td>Line Total</td>
+        </tr>
+    </thead>
+    <tbody *ngIf="po">
+        <tr *ngFor="let line of po.polines">
+            <td> {{ line.product }}</td>
+            <td> {{ line.quantity }}</td>
+            <td> {{ line.lineTotal | currency}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,3 +1,5 @@
+import { Product } from "../product/product.class";
+
 export class Vendor {
     id: number = 0;
     code: string = "";
@@ -8,4 +10,5 @@ export class Vendor {
     zip: string = "";
     phone: string = "";
     email: string = "";
+
 }
